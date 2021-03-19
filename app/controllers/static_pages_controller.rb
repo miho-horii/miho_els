@@ -1,6 +1,6 @@
 class StaticPagesController < ApplicationController
-  def hom
-  abort
+  def home
+  
   end
 
   def about
