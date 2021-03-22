@@ -1,15 +1,19 @@
-<%= form_for @user do |f| %>
-    <%= f.label :name %>
-    <%= f.text_field :name, class: "form-control" %>
+<%= form_for @user do |f| %>
+    <%= render "shared/error_messages", object: f.object %>
+    <div class="form-group">
+        <%= f.text_field :name, class: "form-control", placeholder: "Name" %>
+    </div>
 
-    <%= f.label :email %>
-    <%= f.text_field :email, class: "form-control" %>
+    <div class="form-group">
+        <%= f.email_field :email, class: "form-control", placeholder: "Email" %>
+    </div>
 
-    <%= f.label :password %>
-    <%= f.password_field :password, class: "form-control" %>
+    <div class="form-group">
+        <%= f.password_field :password, class: "form-control", placeholder: "Password" %>
+    </div>
 
-    <%= f.label :password_confirmation, "Confirmation" %>
-    <%= f.password_field :password_confirmation, class: "form-control" %>
-
-    <%= f.submit "Create New Account", class: "btn btn-block btn-primary" %>
-<% end %>
+    <div class="form-group">
+        <%= f.password_field :password_confirmation, class: "form-control", placeholder: "Password Confirmation" %>
+    </div>
+    <%= f.submit btn_msg, class:"btn btn-info btn-block mt-4" %>
+<% end %>
