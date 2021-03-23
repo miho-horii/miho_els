@@ -14,10 +14,34 @@
                     <%= link_to "About", about_path, class:"nav-link"%>
                 </li>
 
-                <li class="nav-item">
-                    <%= link_to "SignUp", signup_path, class:"nav-link"%>
-                </li>
-            </ul>   
+                <% if logged_in? %>
+                    <li>
+                        <%= link_to "Users", users_path, class: "nav-link" %>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">
+                        </a>
+                        <ul class="dropdown-menu" aria-labelledby="navbarDropdown"> 
+                            <li>
+                                <%= link_to "Profile", "#", class: "dropdown-item" %>
+                            </li>
+                            <li>
+                                <%= link_to "Settings", "#", class: "dropdown-item" %>
+                            </li>
+                            <li>
+                                <%= link_to "Sign Out", logout_path, method: :delete, class: "dropdown-item" %>
+                            </li>
+                        </ul>
+                    </li>
+                <% else %>
+                    <li class="nav-item">
+                        <%= link_to "Signup", signup_path, class: "nav-link" %>
+                    </li>
+                    <li class="nav-item">
+                        <%= link_to "Login", login_path, class: "nav-link" %>
+                    </li>
+                <% end %>
+            </ul>
         </div>
     </div>
 </nav>
