@@ -26,9 +26,5 @@ module SessionsHelper
     !current_user.nil?
   end
 
-  # Authorization -> Only logged in users can access some pages (ex: edit, logout)
-  def only_loggedin_users
-    redirect_to login_url uless logged_in?
-  end
-
+  
 end
