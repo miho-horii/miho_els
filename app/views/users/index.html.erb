@@ -1,0 +1,34 @@
+<% provide(:title, 'Users') %>
+
+<div class="form container">
+    <h1 class="text-center">List of Users</h1>
+    <div class="container mt-2">
+        <div class="m-4 container pagination justify-content-center">
+            <%= will_paginate %>
+        </div>
+        <div>
+            <ul class="users row">
+                <% @users.each do |user| %>
+                    <div class="col-6 container">
+                        <div class="card mb-3">
+                            <div class="card-body p-4">
+                                <div class="row">
+                                    <div class="col-2">
+                                        <%= profile_image(user, "medium") %>
+                                    </div>
+                                    <div class="col-10">
+                                        <h3><%= link_to user.name, user %></h3>
+                                        <h5><%= user.email %></h5>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                <% end %>
+            </ul>
+        </div>
+        <div class="m-4 container pagination justify-content-center">
+            <%= will_paginate %>
+        </div>
+    </div>
+</div>
