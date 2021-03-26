@@ -1,7 +1,7 @@
-<% provide(:title, 'Users') %>
+<% provide(:title, 'Followers') %>
 
 <div class="form container">
-    <h1 class="text-center mt-4">List of Users</h1>
+    <h1 class="text-center mt-4">Followers</h1>
     <div class="container mt-2">
         <div class="m-4 container pagination justify-content-center">
             <%= will_paginate %>
@@ -9,7 +9,7 @@
         <div>
             <ul class="users row">
                 <% @users.each do |user| %>
-                    <div class="col-6 container">
+                    <div class="col-6 container ">
                         <div class="card mb-3">
                             <div class="card-body p-4">
                                 <div class="row">

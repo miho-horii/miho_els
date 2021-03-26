@@ -11,6 +11,8 @@
                     <%= profile_image(@user, "medium") %>
                     <h5 class="card-title mt-3"><%= @user.name %></h5>
                     <p class="card-text"><%= @user.email %></p>
+                    <%= render 'follow_form' if logged_in?%>
+                    <div class="mt-2"><%= render 'shared/stats' %></div>
                 </div>
             </div>
         </div>
@@ -21,7 +23,6 @@
                 </div>
                 <div class="card-body">
                     <div class="row p-3">
-                        <h5></h5>
                     </div>
                 </div>
             </div>
