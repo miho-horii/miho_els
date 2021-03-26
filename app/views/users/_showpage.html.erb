@@ -1,0 +1,29 @@
+<div class="container pt-4 content">
+    <div class="row">
+        <div class="col-3">
+            <div class="card">
+                <div class="card-header">
+                    User Information
+                </div>
+                <div class="card-body p-4 text-center">
+                    <%= profile_image(@user, "medium") %>
+                    <h5 class="card-title mt-3"><%= @user.name %></h5>
+                    <p class="card-text"><%= @user.email %></p>
+                    <%= render 'users/follow_form' if logged_in?%>
+                    <div class="mt-2"><%= render 'shared/stats' %></div>
+                </div>
+            </div>
+        </div>
+        <div class="col-9">
+            <div class="card">
+                <div class="card-header">
+                    Activity Feed
+                </div>
+                <div class="card-body">
+                    <div class="row p-3">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
