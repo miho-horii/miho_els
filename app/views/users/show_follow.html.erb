@@ -1,0 +1,37 @@
+<% provide(:title, @title) %>
+
+<div class="row">
+    <div class="col-4">
+        <div class="user_info">
+            <%= profile_image(@user, "medium") %>
+            <h1><%= @user.name %></h1>
+            <span><%= link_to "view my profile", @user %></span>
+            <span><b>Microposts:</b><%= %></span>
+        </div>
+        <div class="stats">
+            <div>
+                <%= render 'shared/stats' %>
+            </div>
+            <div>
+                <% if @all_users.any? %>
+                    <div class="s">
+                        <% @all_users.each do |user| %>
+                            <%= link_to <%= profile_image(@user, "medium") %>, user %>
+                        <% end %>
+                    </div>
+                <% end %>
+            </div>
+        </div>
+    </div>
+    <div class="col-8">
+        <h3><%= @title %></h3>
+        <% if @users.any? %>
+            <% @users.each do |user| %>
+                <ul class="users follow">
+                    <%= render user%>
+                </ul>
+            <% end %>
+            <%= will_paginate %>
+        <% end %>
+    </div>
+</div>
